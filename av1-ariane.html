@@ -98,9 +98,16 @@
 <h1 class="title display-7">UFSCar - Universidade Federal de São Carlos<br>ACIEPE - Introdução à Ciência de Dados Usando R</h1>
 <p class="subtitle lead"><strong>Aluna: Ariane Hayana Thomé de Farias</strong></p>
 <p class="author"></p>
-<p class="date">Em: 19/03/2022</p>
+<p class="date">Entregue em: 21/03/2022</p>
 </header>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"></a></p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="Licença Creative Commons" style="border-width:0"></a></p>
+<div class="cell" data-layout-align="center">
+<style type="text/css">
+div{
+  text-align: justify; 
+}
+</style>
+</div>
 <section id="avaliação-1" class="level2">
 <h2 class="anchored" data-anchor-id="avaliação-1"><strong>Avaliação 1</strong></h2>
 <section id="valendo-4-pontos-construa-uma-função-em-r-que-receba-quatro-valores-inteiros-denominados-a-b-c-e-d-para-realizar-o-seguinte-comportamento.-assuma-a-seguinte-expressão-artimética" class="level5">
@@ -109,18 +116,31 @@
 </section>
 <section id="em-sua-função-os-espaços-em-branco-da-expressão-acima-indicados-como-devem-ser-preenchidos-usando-os-valores-a-b-c-e-d-visando-retornar-o-maior-valor-possível-calculado-pela-expressão.-por-exemplo-se-a1-b2-c3-d4-uma-das-possibilidades-de-utilização-dos-valores-para-preencher-os-espaços-em-branco-é-1-4-2-3.-a-pergunta-que-fica-entretanto-é-se-o-resultado-da-expressão-é-de-fato-o-maior-valor-possível-que-pode-ser-obtido." class="level5">
 <h5 class="anchored" data-anchor-id="em-sua-função-os-espaços-em-branco-da-expressão-acima-indicados-como-devem-ser-preenchidos-usando-os-valores-a-b-c-e-d-visando-retornar-o-maior-valor-possível-calculado-pela-expressão.-por-exemplo-se-a1-b2-c3-d4-uma-das-possibilidades-de-utilização-dos-valores-para-preencher-os-espaços-em-branco-é-1-4-2-3.-a-pergunta-que-fica-entretanto-é-se-o-resultado-da-expressão-é-de-fato-o-maior-valor-possível-que-pode-ser-obtido."><strong>Em sua função, os espaços em branco da expressão acima (indicados como [ ]) devem ser preenchidos usando os valores a, b, c e d, visando retornar o maior valor possível calculado pela expressão. Por exemplo, se a=1, b=2, c=3, d=4 uma das possibilidades de utilização dos valores para preencher os espaços em branco é: 1 * 4 + 2 * 3. A pergunta que fica, entretanto, é se o resultado da expressão é de fato o maior valor possível que pode ser obtido.</strong></h5>
+<p><span style="color:blue">Resposta:</span> Para a resolução da questão, os valores de entrada foram alocados em um vetor de quatro posições, conforme apresentado no enunciado. Assim, tais valores foram ordenados do menor para o maior. Separou-se os dois maiores valores para serem multiplicados entre si e os demais alocados na segunda parte da expressão aritmética. Desta forma, no exemplo considerando as entradas <code>a=1, b=2, c=3, d=4</code>, o resultado obtido na expressão será o maior, ou seja, 14, conforme o código abaixo:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>expressao <span class="ot">&lt;-</span> <span class="cf">function</span>(a,b,c,d){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  v <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">c</span>(a,b,c,d))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">isTRUE</span>(<span class="fu">all</span>(v <span class="sc">==</span> <span class="fu">floor</span>(v)))) <span class="fu">stop</span>(<span class="st">"Insira APENAS números inteiros!"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    resultado <span class="ot">&lt;-</span> v[<span class="dv">1</span>]<span class="sc">*</span>v[<span class="dv">2</span>]<span class="sc">+</span>v[<span class="dv">3</span>]<span class="sc">*</span>v[<span class="dv">4</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(resultado)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">expressao</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>[1] 14</code></pre>
+</div>
+</div>
 </section>
 <section id="valendo-6-pontos-as-próximas-questões-são-referentes-ao-conjunto-de-dados-fornecido-em-anexo.-ele-é-oriundo-do-seguinte-link-httpswww.kaggle.comgregorutvideogamesales.-o-conjunto-de-dados-refere-se-às-vendas-de-jogos-de-videogames.-de-maneira-breve-ele-é-composto-pelas-seguintes-colunas" class="level5">
 <h5 class="anchored" data-anchor-id="valendo-6-pontos-as-próximas-questões-são-referentes-ao-conjunto-de-dados-fornecido-em-anexo.-ele-é-oriundo-do-seguinte-link-httpswww.kaggle.comgregorutvideogamesales.-o-conjunto-de-dados-refere-se-às-vendas-de-jogos-de-videogames.-de-maneira-breve-ele-é-composto-pelas-seguintes-colunas"><strong>2. (Valendo 6 pontos) As próximas questões são referentes ao conjunto de dados fornecido em anexo. Ele é oriundo do seguinte link</strong> <a href="https://www.kaggle.com/gregorut/videogamesales" class="uri">https://www.kaggle.com/gregorut/videogamesales</a><strong>. O conjunto de dados refere-se às vendas de jogos de videogames. De maneira breve, ele é composto pelas seguintes colunas:</strong></h5>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="ehskwzkckw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="gixhbinaar" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ehskwzkckw .gt_table {
+#gixhbinaar .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -145,7 +165,7 @@ html {
   border-left-color: #D3D3D3;
 }
 
-#ehskwzkckw .gt_heading {
+#gixhbinaar .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -157,7 +177,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#ehskwzkckw .gt_title {
+#gixhbinaar .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -169,7 +189,7 @@ html {
   border-bottom-width: 0;
 }
 
-#ehskwzkckw .gt_subtitle {
+#gixhbinaar .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -181,13 +201,13 @@ html {
   border-top-width: 0;
 }
 
-#ehskwzkckw .gt_bottom_border {
+#gixhbinaar .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ehskwzkckw .gt_col_headings {
+#gixhbinaar .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -202,7 +222,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#ehskwzkckw .gt_col_heading {
+#gixhbinaar .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -222,7 +242,7 @@ html {
   overflow-x: hidden;
 }
 
-#ehskwzkckw .gt_column_spanner_outer {
+#gixhbinaar .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -234,15 +254,15 @@ html {
   padding-right: 4px;
 }
 
-#ehskwzkckw .gt_column_spanner_outer:first-child {
+#gixhbinaar .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ehskwzkckw .gt_column_spanner_outer:last-child {
+#gixhbinaar .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ehskwzkckw .gt_column_spanner {
+#gixhbinaar .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -254,7 +274,7 @@ html {
   width: 100%;
 }
 
-#ehskwzkckw .gt_group_heading {
+#gixhbinaar .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -279,7 +299,7 @@ html {
   vertical-align: middle;
 }
 
-#ehskwzkckw .gt_empty_group_heading {
+#gixhbinaar .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -294,15 +314,15 @@ html {
   vertical-align: middle;
 }
 
-#ehskwzkckw .gt_from_md > :first-child {
+#gixhbinaar .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ehskwzkckw .gt_from_md > :last-child {
+#gixhbinaar .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ehskwzkckw .gt_row {
+#gixhbinaar .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -321,7 +341,7 @@ html {
   overflow-x: hidden;
 }
 
-#ehskwzkckw .gt_stub {
+#gixhbinaar .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -334,7 +354,7 @@ html {
   padding-right: 5px;
 }
 
-#ehskwzkckw .gt_stub_row_group {
+#gixhbinaar .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -348,11 +368,11 @@ html {
   vertical-align: top;
 }
 
-#ehskwzkckw .gt_row_group_first td {
+#gixhbinaar .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ehskwzkckw .gt_summary_row {
+#gixhbinaar .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -362,16 +382,16 @@ html {
   padding-right: 5px;
 }
 
-#ehskwzkckw .gt_first_summary_row {
+#gixhbinaar .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ehskwzkckw .gt_first_summary_row.thick {
+#gixhbinaar .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ehskwzkckw .gt_last_summary_row {
+#gixhbinaar .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -381,7 +401,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-#ehskwzkckw .gt_grand_summary_row {
+#gixhbinaar .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -391,7 +411,7 @@ html {
   padding-right: 5px;
 }
 
-#ehskwzkckw .gt_first_grand_summary_row {
+#gixhbinaar .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -401,11 +421,11 @@ html {
   border-top-color: #D3D3D3;
 }
 
-#ehskwzkckw .gt_striped {
+#gixhbinaar .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ehskwzkckw .gt_table_body {
+#gixhbinaar .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -414,7 +434,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-#ehskwzkckw .gt_footnotes {
+#gixhbinaar .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -428,7 +448,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#ehskwzkckw .gt_footnote {
+#gixhbinaar .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -437,7 +457,7 @@ html {
   padding-right: 5px;
 }
 
-#ehskwzkckw .gt_sourcenotes {
+#gixhbinaar .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -451,7 +471,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#ehskwzkckw .gt_sourcenote {
+#gixhbinaar .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -459,60 +479,60 @@ html {
   padding-right: 5px;
 }
 
-#ehskwzkckw .gt_left {
+#gixhbinaar .gt_left {
   text-align: left;
 }
 
-#ehskwzkckw .gt_center {
+#gixhbinaar .gt_center {
   text-align: center;
 }
 
-#ehskwzkckw .gt_right {
+#gixhbinaar .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ehskwzkckw .gt_font_normal {
+#gixhbinaar .gt_font_normal {
   font-weight: normal;
 }
 
-#ehskwzkckw .gt_font_bold {
+#gixhbinaar .gt_font_bold {
   font-weight: bold;
 }
 
-#ehskwzkckw .gt_font_italic {
+#gixhbinaar .gt_font_italic {
   font-style: italic;
 }
 
-#ehskwzkckw .gt_super {
+#gixhbinaar .gt_super {
   font-size: 65%;
 }
 
-#ehskwzkckw .gt_footnote_marks {
+#gixhbinaar .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#ehskwzkckw .gt_asterisk {
+#gixhbinaar .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ehskwzkckw .gt_slash_mark {
+#gixhbinaar .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#ehskwzkckw .gt_fraction_numerator {
+#gixhbinaar .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#ehskwzkckw .gt_fraction_denominator {
+#gixhbinaar .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -564,23 +584,27 @@ tbody tr:last-child {
 </section>
 <section id="para-cada-questão-forneça-o-código-r-necessário-para-recuperar-o-que-está-sendo-requerido-usando-o-pacote-tidyverse." class="level5">
 <h5 class="anchored" data-anchor-id="para-cada-questão-forneça-o-código-r-necessário-para-recuperar-o-que-está-sendo-requerido-usando-o-pacote-tidyverse."><strong>Para cada questão, forneça o código R necessário para recuperar o que está sendo requerido (usando o pacote tidyverse).</strong></h5>
-<p><span style="color:blue"> - Organização dos dados: </span></p>
+<p><span style="color:blue">- Organização dos dados:</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leitura dos dados</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>games <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"dados/vgsales.csv"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Limpeza dos nomes das colunas</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>games <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(games)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pacotes</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Leitura dos dados</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>games <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"dados/vgsales.csv"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Limpeza dos nomes das colunas</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>games <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(games)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="a---recupere-todos-os-jogos-produzidos-pela-nintendo-que-foram-vendidos-na-década-de-90." class="level5">
 <h5 class="anchored" data-anchor-id="a---recupere-todos-os-jogos-produzidos-pela-nintendo-que-foram-vendidos-na-década-de-90."><strong>a - Recupere todos os jogos produzidos pela Nintendo que foram vendidos na década de 90.</strong></h5>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb2"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nintendo_90 <span class="ot">&lt;-</span> games <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name,year,publisher) <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="dv">1990</span><span class="sc">:</span><span class="dv">1999</span> <span class="sc">&amp;</span> publisher <span class="sc">%in%</span> <span class="st">"Nintendo"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(name) <span class="sc">|&gt;</span> </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="sc">-</span><span class="fu">desc</span>(year));nintendo_90</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nintendo_90 <span class="ot">&lt;-</span> games <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name,year,publisher) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="dv">1990</span><span class="sc">:</span><span class="dv">1999</span> <span class="sc">&amp;</span> publisher <span class="sc">%in%</span> <span class="st">"Nintendo"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(name) <span class="sc">|&gt;</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="sc">-</span><span class="fu">desc</span>(year));nintendo_90</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 124 x 3
 # Groups:   name [120]
@@ -603,11 +627,11 @@ tbody tr:last-child {
 <section id="b---recupere-todos-os-jogos-do-gênero-de-sports-ordenando-o-resultado-em-relação-ao-total-de-vendas-em-nível-global." class="level5">
 <h5 class="anchored" data-anchor-id="b---recupere-todos-os-jogos-do-gênero-de-sports-ordenando-o-resultado-em-relação-ao-total-de-vendas-em-nível-global."><strong>b - Recupere todos os jogos do gênero de Sports, ordenando o resultado em relação ao total de vendas em nível global.</strong></h5>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb4"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sports <span class="ot">&lt;-</span> games <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name,genre,global_sales) <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(genre <span class="sc">%in%</span> <span class="st">"Sports"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(global_sales) <span class="sc">|&gt;</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(global_sales));sports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sports <span class="ot">&lt;-</span> games <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name,genre,global_sales) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(genre <span class="sc">%in%</span> <span class="st">"Sports"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(global_sales) <span class="sc">|&gt;</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(global_sales));sports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 2,346 x 3
 # Groups:   global_sales [273]
@@ -630,13 +654,13 @@ tbody tr:last-child {
 <section id="c---recupere-todos-os-jogos-da-franquia-mario-existem-várias-variações-desse-jogo-lançados-a-partir-de-1998-ordene-os-jogos-de-maneira-que-os-mais-recentes-sejam-apresentados-primeiro." class="level5">
 <h5 class="anchored" data-anchor-id="c---recupere-todos-os-jogos-da-franquia-mario-existem-várias-variações-desse-jogo-lançados-a-partir-de-1998-ordene-os-jogos-de-maneira-que-os-mais-recentes-sejam-apresentados-primeiro."><strong>c - Recupere todos os jogos da franquia Mario (existem várias variações desse jogo) lançados a partir de 1998; ordene os jogos de maneira que os mais recentes sejam apresentados primeiro.</strong></h5>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb6"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">%ni%</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">Negate</span>(<span class="st">`</span><span class="at">%in%</span><span class="st">`</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>mario <span class="ot">&lt;-</span> games <span class="sc">|&gt;</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name,year) <span class="sc">|&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%ni%</span> <span class="st">"N/A"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1998</span> <span class="sc">&amp;</span> <span class="fu">str_detect</span>(name, <span class="st">"Mario"</span>)) <span class="sc">|&gt;</span>   </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(year));mario </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">%ni%</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">Negate</span>(<span class="st">`</span><span class="at">%in%</span><span class="st">`</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mario <span class="ot">&lt;-</span> games <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name,year) <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%ni%</span> <span class="st">"N/A"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1998</span> <span class="sc">&amp;</span> <span class="fu">str_detect</span>(name, <span class="st">"Mario"</span>)) <span class="sc">|&gt;</span>   </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(year));mario </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code># A tibble: 90 x 2
    name                                                year 
@@ -657,6 +681,30 @@ tbody tr:last-child {
 </section>
 <section id="d---recupere-a-quantidade-média-de-vendas-na-europa-para-os-jogos-da-plataforma-wii-lançados-entre-2008-e-2012-inclusive-por-gênero-e-ano-de-lançamento-do-jogo." class="level5">
 <h5 class="anchored" data-anchor-id="d---recupere-a-quantidade-média-de-vendas-na-europa-para-os-jogos-da-plataforma-wii-lançados-entre-2008-e-2012-inclusive-por-gênero-e-ano-de-lançamento-do-jogo."><strong>d - Recupere a quantidade média de vendas na Europa para os jogos da plataforma Wii lançados entre 2008 e 2012, inclusive, por gênero e ano de lançamento do jogo.</strong></h5>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb10"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>vendas_europa <span class="ot">&lt;-</span> games <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(eu_sales,year,genre,platform) <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="dv">2008</span><span class="sc">:</span><span class="dv">2012</span> <span class="sc">&amp;</span> platform <span class="sc">%in%</span> <span class="st">"Wii"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year,genre,platform) <span class="sc">|&gt;</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">media_europa =</span> <span class="fu">mean</span>(eu_sales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>));vendas_europa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 56 x 4
+# Groups:   year, genre [56]
+   year  genre        platform media_europa
+   &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt;           &lt;dbl&gt;
+ 1 2008  Action       Wii            0.0982
+ 2 2008  Adventure    Wii            0.0442
+ 3 2008  Fighting     Wii            0.229 
+ 4 2008  Misc         Wii            0.155 
+ 5 2008  Platform     Wii            0.149 
+ 6 2008  Puzzle       Wii            0.0722
+ 7 2008  Racing       Wii            0.637 
+ 8 2008  Role-Playing Wii            0.035 
+ 9 2008  Shooter      Wii            0.0908
+10 2008  Simulation   Wii            0.115 
+# ... with 46 more rows</code></pre>
+</div>
+</div>
 </section>
 <section id="e---mostre-em-um-gráfico-de-sua-escolha-linha-ou-coluna-a-quantidade-de-jogos-lançados-em-cada-plataforma-por-ano." class="level5">
 <h5 class="anchored" data-anchor-id="e---mostre-em-um-gráfico-de-sua-escolha-linha-ou-coluna-a-quantidade-de-jogos-lançados-em-cada-plataforma-por-ano."><strong>e - Mostre em um gráfico de sua escolha (linha ou coluna), a quantidade de jogos lançados em cada plataforma por ano.</strong></h5>
@@ -664,14 +712,16 @@ tbody tr:last-child {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="av1-ariane_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="1152"></p>
+<p><img src="av1-ariane_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="1152"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-</main>
+<hr>
+<p><a href="https://github.com/a-hayana/estudos_ufscar"><img src="https://cdn.icon-icons.com/icons2/2351/PNG/512/logo_github_icon_143196.png" width="40" height="40" align="left"><em>Documento elaborado no RStudio</em><br>By Ariane Hayana</a></p><a href="https://github.com/a-hayana/estudos_ufscar">
+</a></section><a href="https://github.com/a-hayana/estudos_ufscar">
+</a></section><a href="https://github.com/a-hayana/estudos_ufscar">
+</a></main><a href="https://github.com/a-hayana/estudos_ufscar">
 <!-- /main column -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -749,7 +799,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+</a></div><a href="https://github.com/a-hayana/estudos_ufscar"> <!-- /content -->
 
 
-</body></html>
+</a></body></html>
