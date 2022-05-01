@@ -8,3 +8,4 @@
 
 ## `Avaliações` 
 - Av. 1: https://a-hayana.github.io/estudos_ufscar/av1-ariane
+- Av. 2: https://a-hayana.github.io/estudos_ufscar/av2-ariane
