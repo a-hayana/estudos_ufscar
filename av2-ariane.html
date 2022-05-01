@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.3.118">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>UFSCar - Universidade Federal de São Carlos ACIEPE - Introdução à Ciência de Dados Usando R</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+  <script src="av2-ariane_files/libs/clipboard/clipboard.min.js"></script>
+  <script src="av2-ariane_files/libs/quarto-html/quarto.js"></script>
+  <script src="av2-ariane_files/libs/quarto-html/popper.min.js"></script>
+  <script src="av2-ariane_files/libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="av2-ariane_files/libs/quarto-html/anchor.min.js"></script>
+  <link href="av2-ariane_files/libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="av2-ariane_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet">
+  <script src="av2-ariane_files/libs/bootstrap/bootstrap.min.js"></script>
+  <link href="av2-ariane_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="av2-ariane_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="fullcontent">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+<header id="title-block-header">
+<h1 class="title display-7">UFSCar - Universidade Federal de São Carlos<br>ACIEPE - Introdução à Ciência de Dados Usando R</h1>
+<p class="subtitle lead"><strong>Aluna: Ariane Hayana Thomé de Farias</strong><br>Prof.&nbsp;Dr.&nbsp;Anderson C. Carniel</p>
+<p class="date">Entregue em: 29/04/2022</p>
+</header>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="Licença Creative Commons" style="border-width:0"></a></p>
+<div class="cell" data-layout-align="center">
+<style type="text/css">
+div{
+  text-align: justify; 
+}
+</style>
+</div>
+<section id="avaliação-2" class="level2">
+<h2 class="anchored" data-anchor-id="avaliação-2"><strong>Avaliação 2</strong></h2>
+<section id="para-resolver-os-exercícios-da-avaliação-2-utilize-o-conjunto-de-dados-disponibilizado.-ele-armazena-a-classificação-da-qualidade-de-vinhos-e-foi-obtido-em" class="level4">
+<h4 class="anchored" data-anchor-id="para-resolver-os-exercícios-da-avaliação-2-utilize-o-conjunto-de-dados-disponibilizado.-ele-armazena-a-classificação-da-qualidade-de-vinhos-e-foi-obtido-em">Para resolver os exercícios da Avaliação 2, utilize o conjunto de dados disponibilizado. Ele armazena a classificação da qualidade de vinhos e foi obtido em:</h4>
+<blockquote class="blockquote">
+<p>https://www.kaggle.com/datasets/nareshbhat/wine-quality-binary-classification.</p>
+</blockquote>
+<p>De maneira breve, suas colunas são:</p>
+<p>1 - fixed acidity</p>
+<p>2 - volatile acidity</p>
+<p>3 - citric acid</p>
+<p>4 - residual sugar</p>
+<p>5 - chlorides</p>
+<p>6 - free sulfur dioxide</p>
+<p>7 - total sulfur dioxide</p>
+<p>8 - density</p>
+<p>9 - pH</p>
+<p>10 - sulphates</p>
+<p>11 - alcohol</p>
+<p>12 - quality (‘good’ ou ‘bad’, sendo essa coluna a que determina a qualidade do vinho com base nos outros atributos obtidos por sensores)</p>
+<p>Note que as colunas 1 até a 11, são atributos numéricos e contínuos, enquanto a coluna 12 é uma coluna categórica com um domínio de 2 valores.</p>
+<p><br></p>
+</section>
+<section id="q1-valendo-3-pontos-considerando-o-conjunto-de-dados-da-prova-identifique-2-atributos-numéricos-que-estejam-linearmente-correlacionados.-justifique-sua-resposta-usando-pelo-menos-2-meios-diferentes-para-mostrar-a-correlação." class="level4">
+<h4 class="anchored" data-anchor-id="q1-valendo-3-pontos-considerando-o-conjunto-de-dados-da-prova-identifique-2-atributos-numéricos-que-estejam-linearmente-correlacionados.-justifique-sua-resposta-usando-pelo-menos-2-meios-diferentes-para-mostrar-a-correlação."><strong>Q1 (valendo 3 pontos)</strong> Considerando o conjunto de dados da prova, identifique 2 atributos numéricos que estejam linearmente correlacionados. Justifique sua resposta usando pelo menos 2 meios diferentes para mostrar a correlação.</h4>
+<p>R = Utilizando o pacote <code>corrplot</code> é possível identificarmos as correlações (ou não) das variáveis analisadas. Assim, para ilustrar, os resultados obtidos foram:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"dados/wine.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>cor_dados <span class="ot">&lt;-</span> <span class="fu">cor</span>(dados[<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>])</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_dados,<span class="at">type=</span><span class="st">"upper"</span>,<span class="at">tl.srt=</span><span class="dv">45</span>,<span class="at">tl.cex =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="av2-ariane_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Visualmente, quanto maior o círculo, maior a correlação entre as variáveis e quanto mais azul escuro, mais próxima a correlação estará de 1 (correlação positiva e forte). O mesmo ocorre caso seja negativa (ou seja, -1): quanto mais vermelho escuro, mais forte será a correlação.</p>
+<p>Desta forma, conforme podemos observar, as variáveis <code>density</code> e <code>fixed acidity</code>, bem como <code>pH</code> e <code>fixed acidity</code> são alguns dos pares mais correlacionados.</p>
+<p>É possível visualizarmos os gráficos de dispersão das variáveis utilizando o pacote <code>GGally</code>, que permite construir uma matriz de gráficos, conforme apresentado abaixo:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb2"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(dados,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">columns =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>),<span class="at">upper =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="st">"points"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="av2-ariane_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="6400"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Através do gráfico de dispersão na matriz de plotagem pode-se verificar que este sugere uma correlação linear <em>positiva</em> entre as variáveis <code>density</code> e <code>fixed acidity</code>, bem como uma correlação linear <em>negativa</em> entre as variáveis <code>pH</code> e <code>fixed acidity</code>.</p>
+<p>Além disso, podemos identificar, por meio do coeficiente de correlação (r), o grau da correlação:</p>
+<ul>
+<li><code>density</code> e <code>fixed acidity</code>:</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(density, fixed.acidity) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>                density fixed.acidity
+density       1.0000000     0.6680473
+fixed.acidity 0.6680473     1.0000000</code></pre>
+</div>
+</div>
+<ul>
+<li><code>pH</code> e <code>fixed acidity</code>:</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb5"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(pH, fixed.acidity) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>                      pH fixed.acidity
+pH             1.0000000    -0.6829782
+fixed.acidity -0.6829782     1.0000000</code></pre>
+</div>
+</div>
+</section>
+<section id="q2-valendo-3-pontos-forneça-uma-visualização-gráfica-de-sua-escolha-e.g.-gráfico-de-barra-ou-linha-que-mostre-visualmente-3-atributos-do-conjunto-de-dados-da-prova.-dessa-forma-sua-resposta-deve-responder-as-seguintes-perguntas" class="level4">
+<h4 class="anchored" data-anchor-id="q2-valendo-3-pontos-forneça-uma-visualização-gráfica-de-sua-escolha-e.g.-gráfico-de-barra-ou-linha-que-mostre-visualmente-3-atributos-do-conjunto-de-dados-da-prova.-dessa-forma-sua-resposta-deve-responder-as-seguintes-perguntas"><strong>Q2 (valendo 3 pontos)</strong> Forneça uma visualização gráfica de sua escolha (e.g., gráfico de barra ou linha) que mostre visualmente 3 atributos do conjunto de dados da prova. Dessa forma, sua resposta deve responder as seguintes perguntas:</h4>
+<p><br></p>
+<p><strong>a) Qual é o objetivo da visualização?</strong></p>
+<p>R = Verificar a qualidade dos vinhos, considerando a densidade e a porcentagem de álcool contida nos vinhos.</p>
+<p><strong>b) Quais são os atributos escolhidos para isso?</strong></p>
+<p>R = <code>quality</code>; <code>density</code>; <code>alcohol</code>.</p>
+<p><strong>c) Qual é o código necessário para realizar a visualização desejada?</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb7"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x =</span> alcohol)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">'black'</span>,<span class="at">fill =</span> <span class="st">"yellow"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x =</span> density)) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.001</span>, <span class="at">color =</span> <span class="st">'black'</span>,<span class="at">fill =</span> <span class="fu">I</span>(<span class="st">'purple2'</span>))</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x =</span> quality), ) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">'black'</span>,<span class="at">fill=</span>(<span class="st">'blue'</span>),<span class="at">stat=</span><span class="st">"count"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">|</span> g2 <span class="sc">|</span> g3 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="av2-ariane_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>d)Que tipo de conclusão pode-se tirar a partir da visualização?</strong></p>
+<ul>
+<li><code>quality</code>: Podemos observar que a maioria dos vinhos estão classificados com boa qualidade (<em>good</em>);</li>
+<li><code>density</code>: Percebe-se um padrão de uma distribuição normal;</li>
+<li><code>alcohol</code>: As menores porcentagens de álcool são as que apresentam a maior quantidade no banco de dados.</li>
+</ul>
+</section>
+<section id="q3-valendo-4-pontos-elabore-um-programa-que-efetua-uma-classificação-binária-usando-árvore-de-decisão.-sua-árvore-de-decisão-deve-retornar-se-um-vinho-é-good-ou-bad-considerando-os-valores-dos-outros-atributos-do-conjunto-de-dados-i.e.-colunas-1-até-a-11.-utilizando-o-método-de-validação-holdout-com-80-dos-dados-para-treino-e-20-dos-dados-para-teste-responda-de-maneira-sucinta-as-seguintes-perguntas" class="level4">
+<h4 class="anchored" data-anchor-id="q3-valendo-4-pontos-elabore-um-programa-que-efetua-uma-classificação-binária-usando-árvore-de-decisão.-sua-árvore-de-decisão-deve-retornar-se-um-vinho-é-good-ou-bad-considerando-os-valores-dos-outros-atributos-do-conjunto-de-dados-i.e.-colunas-1-até-a-11.-utilizando-o-método-de-validação-holdout-com-80-dos-dados-para-treino-e-20-dos-dados-para-teste-responda-de-maneira-sucinta-as-seguintes-perguntas"><strong>Q3 (valendo 4 pontos)</strong> Elabore um programa que efetua uma classificação binária usando árvore de decisão. Sua árvore de decisão deve retornar se um vinho é “good” ou “bad” considerando os valores dos outros atributos do conjunto de dados (i.e., colunas 1 até a 11). Utilizando o método de validação holdout com 80% dos dados para treino e 20% dos dados para teste, responda de maneira sucinta as seguintes perguntas:</h4>
+<p><br></p>
+<p><strong>a) Qual é o código necessário para avaliar o desempenho da árvore de decisão usando o holdout?</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb8"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Treino e teste</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>prepare_hold_out <span class="ot">&lt;-</span> <span class="cf">function</span>(tbl, training_perc) {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  tbl_mixed <span class="ot">&lt;-</span> tbl[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tbl)), ]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  nrow <span class="ot">&lt;-</span> <span class="fu">nrow</span>(tbl_mixed)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  nrow_train <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(training_perc <span class="sc">*</span> nrow)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  data_trn <span class="ot">&lt;-</span> tbl_mixed[<span class="dv">1</span><span class="sc">:</span>nrow_train, ]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  data_tst <span class="ot">&lt;-</span> tbl_mixed[(<span class="dv">1</span><span class="sc">+</span>nrow_train)<span class="sc">:</span>(nrow), ]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># retorna como uma lista nomeada</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">training =</span> data_trn, <span class="at">test =</span> data_tst)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>vinho_split <span class="ot">&lt;-</span> <span class="fu">prepare_hold_out</span>(dados, <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>b) Qual é a ilustração gráfica da árvore obtida?</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb9"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart) </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Construímos a árvore de decisão usando o conjunto de treino</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>tree <span class="ot">&lt;-</span> <span class="fu">rpart</span>(quality <span class="sc">~</span>., <span class="at">data =</span> vinho_split<span class="sc">$</span>training);tree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>n= 1280 
+
+node), split, n, loss, yval, (yprob)
+      * denotes terminal node
+
+ 1) root 1280 605 good (0.4726562 0.5273438)  
+   2) alcohol&lt; 10.25 670 219 bad (0.6731343 0.3268657)  
+     4) sulphates&lt; 0.575 278  49 bad (0.8237410 0.1762590) *
+     5) sulphates&gt;=0.575 392 170 bad (0.5663265 0.4336735)  
+      10) volatile.acidity&gt;=0.365 334 125 bad (0.6257485 0.3742515)  
+        20) total.sulfur.dioxide&gt;=50.5 156  37 bad (0.7628205 0.2371795) *
+        21) total.sulfur.dioxide&lt; 50.5 178  88 bad (0.5056180 0.4943820)  
+          42) density&lt; 0.99716 75  23 bad (0.6933333 0.3066667) *
+          43) density&gt;=0.99716 103  38 good (0.3689320 0.6310680) *
+      11) volatile.acidity&lt; 0.365 58  13 good (0.2241379 0.7758621) *
+   3) alcohol&gt;=10.25 610 154 good (0.2524590 0.7475410)  
+     6) sulphates&lt; 0.645 295 112 good (0.3796610 0.6203390)  
+      12) alcohol&lt; 11.45 190  92 good (0.4842105 0.5157895)  
+        24) free.sulfur.dioxide&lt; 7.5 59  17 bad (0.7118644 0.2881356) *
+        25) free.sulfur.dioxide&gt;=7.5 131  50 good (0.3816794 0.6183206)  
+          50) volatile.acidity&gt;=0.9125 10   1 bad (0.9000000 0.1000000) *
+          51) volatile.acidity&lt; 0.9125 121  41 good (0.3388430 0.6611570) *
+      13) alcohol&gt;=11.45 105  20 good (0.1904762 0.8095238) *
+     7) sulphates&gt;=0.645 315  42 good (0.1333333 0.8666667)  
+      14) total.sulfur.dioxide&gt;=105.5 8   0 bad (1.0000000 0.0000000) *
+      15) total.sulfur.dioxide&lt; 105.5 307  34 good (0.1107492 0.8892508) *</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb11"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart.plot)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rpart.plot</span>(tree)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="av2-ariane_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="2800"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>c) Qual foi o atributo escolhido para ser o nó raiz dessa árvore?</strong></p>
+<p>R = alcohol</p>
+<p><strong>d) Qual foi a matriz de confusão obtida? Ademais, identifique:</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode" id="cb12"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>classes_preditas <span class="ot">&lt;-</span> <span class="fu">predict</span>(tree, vinho_split<span class="sc">$</span>test, <span class="at">type =</span> <span class="st">"class"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>confusion_matrix <span class="ot">&lt;-</span> <span class="fu">table</span>(vinho_split<span class="sc">$</span>test<span class="sc">$</span>quality, classes_preditas)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>confusion_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>      classes_preditas
+       bad good
+  bad  100   39
+  good  49  131</code></pre>
+</div>
+</div>
+<p><br></p>
+<blockquote class="blockquote">
+<ol type="i">
+<li>O número de classificações corretas para “good”</li>
+</ol>
+</blockquote>
+<p>R = 131</p>
+<blockquote class="blockquote">
+<ol start="2" type="i">
+<li>O número de classificações corretas para “bad”</li>
+</ol>
+</blockquote>
+<p>R = 100</p>
+<blockquote class="blockquote">
+<ol start="3" type="i">
+<li>O número de falsos positivos</li>
+</ol>
+</blockquote>
+<p>R = 49</p>
+<blockquote class="blockquote">
+<ol start="4" type="i">
+<li>O número de falsos negativos</li>
+</ol>
+</blockquote>
+<p>R = 39</p>
+<hr>
+<p><img src="git.png" class="img-fluid" width="41"><a href="https://github.com/a-hayana/estudos_ufscar"><em>Documento elaborado no RStudio</em></a></p>
+</section>
+</section>
+</main>
+<!-- /main column -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+</body></html>
